@@ -11,3 +11,14 @@ def yandex_forecast():
 
     resp = requests.get(url=url, headers=headers)
     return resp.json()
+
+
+def list_of_cities():
+    url = f"https://api.tickets.yandex.net/api/crm?action=crm.city.list&auth={YANDEX_API_KEY}"
+
+    headers = {
+        "X-Yandex-API-Key": YANDEX_API_KEY
+    }
+
+    resp = requests.get(url=url, headers=headers)
+    return resp.json()
