@@ -3,7 +3,7 @@ import requests
 
 
 def yandex_forecast():
-    url = 'https://api.weather.yandex.ru/v2/forecast?lang=ru_RU'
+    url = 'https://api.weather.yandex.ru/v2/forecast?lang=ru_RU&lat=53.72&lon=91.43'
 
     headers = {
         "X-Yandex-API-Key": YANDEX_API_KEY
