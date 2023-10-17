@@ -37,7 +37,7 @@ class WeatherByCityName(APIView):
         weather_data = yandex_forecast_city(city)
 
         needed_data = {
-            "city": city,
+            "city": weather_data.get('geo_object').get('locality').get('name'),
             "temp": weather_data.get('fact').get('temp'),
             "pressure_mm": weather_data.get('fact').get('pressure_mm'),
             "wind_speed": weather_data.get('fact').get('wind_speed'),

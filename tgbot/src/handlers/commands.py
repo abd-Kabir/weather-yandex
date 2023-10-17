@@ -24,7 +24,7 @@ def message_handler(message: Message) -> Any:
     city_name = message.text
     try:
         weather_data = yandex_forecast_city(city_name)
-        return message.answer(f"Город: {city_name}  🌇️️\n"
+        return message.answer(f"Город: {weather_data.get('geo_object').get('locality').get('name')}  🌇️️\n"
                               f"Температура: {weather_data.get('fact').get('temp')} C° 🌡️\n"
                               f"Давление: {weather_data.get('fact').get('pressure_mm')} мм рт.ст. 💎\n"
                               f"Скорость ветра: {weather_data.get('fact').get('wind_speed')} м/с 💨")
