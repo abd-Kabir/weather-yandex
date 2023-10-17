@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     # libs
     'corsheaders',
     'rest_framework',
+
+    # apps
+    'apps.weather',
 ]
 
 MIDDLEWARE = [
