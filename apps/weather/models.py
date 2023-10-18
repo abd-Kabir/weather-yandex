@@ -6,5 +6,8 @@ class City(models.Model):
     lat = models.CharField(max_length=100)
     lon = models.CharField(max_length=100)
 
+    def __str__(self):
+        return f'{self.name} (lat: {self.lat}, lon: {self.lon})'
+
     class Meta:
         db_table = 'City'

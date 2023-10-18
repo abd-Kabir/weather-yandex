@@ -1,3 +1,4 @@
+from rest_framework import status
 from rest_framework.generics import get_object_or_404
 
 from apps.weather.models import City
@@ -38,4 +39,4 @@ def yandex_forecast_city(city_name):
         resp = requests.get(url=url, headers=headers)
         return resp.json()
     else:
-        raise APIValidation("Город не найден")
+        raise APIValidation("Город не найден", status_code=status.HTTP_404_NOT_FOUND)
